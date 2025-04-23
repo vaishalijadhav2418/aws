@@ -1,3 +1,7 @@
+
+![EC2 Flowchart](ec2-flowchat.png)
+
+
 1.  Q: What is Amazon EC2?   
     A:  Amazon EC2 is a web service that provides resizable compute capacity in the cloud, allowing users to run virtual servers known as instances.
 
