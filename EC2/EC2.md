@@ -18,81 +18,86 @@
     A:  EBS (Elastic Block Store) is persistent storage, while instance store is temporary and data is lost when the instance stops or terminates.
 
 6.  Q: What are EC2 pricing options?   
-    A:  On-Demand, Reserved, Spot, and Savings Plans.
+    A:  On-Demand  : pay per second, first 60 seconds compulsry
+     Dedicated Host : for critical , compliane purpose
+     Dedicated Instance : run on any hardware
+     Reserved : 1 yeara or 3 year , Convertible and Standard
+     Spot : as bid price, 90% cheaper
+     Savings Plans : 1 or 3 year .
 
-7.  Q: What is a key pair in EC2?   
+8.  Q: What is a key pair in EC2?   
     A:  A key pair is used to securely access EC2 instances. It consists of a public key (stored by AWS) and a private key (stored by the user).
 
-8.  Q: What is user data in EC2?   
+9.  Q: What is user data in EC2?   
     A:  User data is a script that is run automatically when an EC2 instance starts, often used for bootstrapping.
 
-9.  Q: What is the default root volume size for Amazon Linux 2 AMI?   
+10.  Q: What is the default root volume size for Amazon Linux 2 AMI?   
     A:  8 GB.
 
-10.  Q: Can we stop a Spot instance?   
+11.  Q: Can we stop a Spot instance?   
      A:  No, Spot instances can be terminated by AWS when the capacity is no longer available or price exceeds the bid.
 
-11.  Q: What is EC2 Auto Scaling?   
+12.  Q: What is EC2 Auto Scaling?   
      A:  Auto Scaling automatically adjusts the number of EC2 instances in a group based on demand.
 
-12.  Q: What is a Security Group?   
+13.  Q: What is a Security Group?   
      A:  A virtual firewall that controls inbound and outbound traffic for EC2 instances.
 
-13.  Q: What is the use of Elastic IP?   
+14.  Q: What is the use of Elastic IP?   
      A:  It is a static, public IPv4 address designed for dynamic cloud computing, allowing consistent access to an instance.
 
-14.  Q: What is a Placement Group?   
+15.  Q: What is a Placement Group?   
      A:  A placement strategy that determines how instances are placed on underlying hardware for better performance.
 
-15.  Q: Can you attach multiple EBS volumes to one EC2 instance?   
+16.  Q: Can you attach multiple EBS volumes to one EC2 instance?   
      A:  Yes.
 
-16.  Q: What is the maximum number of security groups per network interface?   
+17.  Q: What is the maximum number of security groups per network interface?   
      A:  5 by default (can be increased).
 
-17.  Q: What happens when you reboot an EC2 instance?   
+18.  Q: What happens when you reboot an EC2 instance?   
      A:  It retains its instance ID and attached volumes. The reboot is like restarting a physical machine.
 
-18.  Q: What happens when an EC2 instance is terminated?   
+19.  Q: What happens when an EC2 instance is terminated?   
      A:  The instance is permanently deleted and associated ephemeral storage is lost unless EBS volumes are preserved.
 
-19.  Q: What is EC2 Hibernate?   
+20.  Q: What is EC2 Hibernate?   
      A:  Hibernate saves the in-memory RAM to EBS and resumes the instance to its previous state on restart.
 
-20.  Q: What are Dedicated Hosts?   
+21.  Q: What are Dedicated Hosts?   
      A:  Physical servers fully dedicated to your use to meet compliance or licensing requirements.
 
-21.  Q: What is an Elastic Load Balancer (ELB)?   
+22.  Q: What is an Elastic Load Balancer (ELB)?   
      A:  It automatically distributes incoming application traffic across multiple EC2 instances.
 
-22.  Q: Can we resize an EC2 instance?   
+23.  Q: Can we resize an EC2 instance?   
      A:  Yes, by stopping the instance and changing its type.
 
-23.  Q: What are instance metadata and user data used for?   
+24.  Q: What are instance metadata and user data used for?   
      A:  Instance metadata provides information about the instance, and user data is used to automate configuration tasks.
 
-24.  Q: What is the difference between Public IP and Elastic IP?   
+25.  Q: What is the difference between Public IP and Elastic IP?   
      A:  Public IP is dynamically assigned and lost when the instance stops; Elastic IP is static.
 
-25.  Q: What is the default EC2 instance limit per region?   
+26.  Q: What is the default EC2 instance limit per region?   
      A:  20 On-Demand instances per region by default (can be increased).
 
-26.  Q: What are tags in EC2?   
+27.  Q: What are tags in EC2?   
      A:  Key-value pairs assigned to instances for categorization and management.
 
-27.  Q: Can we assign multiple IPs to an EC2 instance?   
+28.  Q: Can we assign multiple IPs to an EC2 instance?   
      A:  Yes, by assigning secondary private IP addresses to the network interface.
 
-28.  Q: What is the difference between stopping and terminating an EC2 instance?   
+29.  Q: What is the difference between stopping and terminating an EC2 instance?   
      A:  Stopping keeps the instance and its root volume; terminating deletes them (unless configured otherwise).
 
-29.  Q: Can an EC2 instance have multiple network interfaces?   
+30.  Q: Can an EC2 instance have multiple network interfaces?   
      A:  Yes, using Elastic Network Interfaces (ENIs).
 
-30.  Q: What is EC2 Instance Store-backed and EBS-backed instance?   
+31.  Q: What is EC2 Instance Store-backed and EBS-backed instance?   
      A:  Store-backed uses temporary storage that is deleted on stop/terminate; EBS-backed uses persistent storage.
 
-  31. Q: What are the main use cases for different EC2 instance types?    
+  32. Q: What are the main use cases for different EC2 instance types?    
       A:    
         -   General Purpose (e.g., t3, m6i):   Balanced CPU/memory for web servers.  
         -   Compute Optimized (e.g., c6g):   High-performance computing, batch processing.  
@@ -100,85 +105,85 @@
         -   Storage Optimized (e.g., i3):   High IOPS workloads.  
         -   Accelerated Computing (e.g., p4):   ML/AI, GPU workloads.
 
-  32. Q: What is the purpose of EC2 Launch Templates?    
+  33. Q: What is the purpose of EC2 Launch Templates?    
       A:   Launch Templates let you define instance configurations (AMI, instance type, key pair, etc.) and support versioning, making them ideal for Auto Scaling and Spot Fleet.
 
-  33. Q: How does a Spot Instance Request work?    
+  34. Q: How does a Spot Instance Request work?    
       A:   A Spot request defines desired instance types and bid parameters. AWS provisions capacity as long as the Spot price is below your max price and capacity is available.
 
-  34. Q: What is an EC2 Savings Plan?    
+  35. Q: What is an EC2 Savings Plan?    
       A:   It's a flexible pricing model offering up to 72% discount in exchange for a 1- or 3-year usage commitment, applicable to any EC2 instance regardless of family, region, or OS.
 
-  35. Q: How do Reserved Instances differ from Savings Plans?    
+  36. Q: How do Reserved Instances differ from Savings Plans?    
       A:   RIs are tied to specific instance types and regions with zonal or regional scope, while Savings Plans are more flexible and usage-based.
 
-  36. Q: When should you use Dedicated Hosts?    
+  37. Q: When should you use Dedicated Hosts?    
       A:   For licensing (BYOL), compliance, and workload isolation. They provide visibility into physical sockets and cores.
 
-  37. Q: What are Capacity Reservations in EC2 used for?    
+  38. Q: What are Capacity Reservations in EC2 used for?    
       A:   To guarantee EC2 instance availability in a specific AZ without having to launch immediately—ideal for predictable workloads or failover readiness.
 
-  38. Q: What is an AMI Catalog?    
+  39. Q: What is an AMI Catalog?    
       A:   A repository in the EC2 console showing public, private, and AWS Marketplace AMIs. It allows filtering and selecting AMIs for launching instances.
 
-  39. Q: What is the relationship between an AMI and EBS volumes?    
+  40. Q: What is the relationship between an AMI and EBS volumes?    
       A:   An AMI defines the base image, and when launched, it creates root and optional data volumes from EBS snapshots.
 
-  40. Q: How do you automate snapshot creation for EBS volumes?    
+  41. Q: How do you automate snapshot creation for EBS volumes?    
       A:   Use   Lifecycle Manager   to schedule snapshot creation and retention policies without manual intervention.
 
-  41. Q: How do EBS Snapshots work?    
+  42. Q: How do EBS Snapshots work?    
       A:   Snapshots are point-in-time, incremental backups stored in S3, which can be used to create new volumes or AMIs.
 
-  42. Q: Can EBS volumes be shared between instances?    
+  43. Q: Can EBS volumes be shared between instances?    
       A:   Not directly. However, with   EBS Multi-Attach   (for some io1/io2 volumes), a volume can be attached to multiple Nitro-based instances in the same AZ.
 
-  43. Q: What are the different volume types in EBS?    
+  44. Q: What are the different volume types in EBS?    
       A:    
         -   gp3/gp2 (General Purpose SSD):   Balanced.  
         -   io1/io2 (Provisioned IOPS SSD):   High-performance.  
         -   st1/sc1 (HDD):   Throughput optimized/cold storage.
 
-  44. Q: What are EC2 Security Groups?    
+  45. Q: What are EC2 Security Groups?    
       A:   Virtual firewalls for instances. They allow specific inbound/outbound traffic using rules based on IP, port, and protocol.
 
-  45. Q: What are Elastic IPs and when should you use them?    
+  46. Q: What are Elastic IPs and when should you use them?    
       A:   Static public IPs for EC2. Useful when a consistent IP is needed across instance stop/start or failover events. 
 
-  46. Q: What is a Placement Group and its types?    
+  47. Q: What is a Placement Group and its types?    
       A:   Logical grouping for instance placement:  
         -   Cluster:   Low-latency, high-throughput.  
         -   Spread:   Instances across hardware (high availability).  
         -   Partition:   Groups within AZs, fault isolation.
 
-  47. Q: What is the use of EC2 Key Pairs?    
+  48. Q: What is the use of EC2 Key Pairs?    
       A:   SSH access authentication. Public key is stored in EC2, and the private key is required to connect to Linux instances.
 
-  48. Q: What are Network Interfaces (ENIs) in EC2?    
+  49. Q: What are Network Interfaces (ENIs) in EC2?    
       A:   Virtual NICs that can be attached to instances. They allow multiple IPs, security groups, and MAC addresses.
 
-  49. Q: How do Load Balancers distribute traffic in EC2?    
+  50. Q: How do Load Balancers distribute traffic in EC2?    
       A:   They monitor instance health and distribute traffic using listeners and rules. ALB (Layer 7), NLB (Layer 4), and CLB are supported.
 
-  50. Q: What are Target Groups in Load Balancing?    
+  51. Q: What are Target Groups in Load Balancing?    
       A:   Sets of registered EC2 instances or IPs that receive traffic based on load balancer rules. Used with ALB/NLB.
 
-  51. Q: What are EC2 Trust Stores?    
+  52. Q: What are EC2 Trust Stores?    
       A:   Stores for managing TLS root CAs and certificates used by EC2 instances to establish trusted connections securely.
 
-  52. Q: What is an Auto Scaling Group (ASG)?    
+  53. Q: What is an Auto Scaling Group (ASG)?    
       A:   A collection of EC2 instances managed collectively, supporting dynamic scaling policies, health checks, and replacement of unhealthy instances.
 
-  53. Q: How does Target Tracking Scaling work in ASGs?    
+  54. Q: How does Target Tracking Scaling work in ASGs?    
       A:   Automatically adjusts capacity to maintain a target metric (e.g., average CPU at 60%).
 
-  54. Q: What’s the role of Lifecycle Hooks in ASG?    
+  55. Q: What’s the role of Lifecycle Hooks in ASG?    
       A:   Lifecycle hooks let you perform custom actions (e.g., logging, data copy) before launching or terminating instances.
 
-  55. Q: How can you implement predictive scaling in EC2?    
+  56. Q: How can you implement predictive scaling in EC2?    
       A:   Use   Predictive Scaling   with ASG based on historical trends and ML-based forecasting for capacity planning.
 
-  56. Q: What is the difference between Instance Refresh and Rolling Update in ASG?    
+  57. Q: What is the difference between Instance Refresh and Rolling Update in ASG?    
   A:    
 -   Instance Refresh:   Replaces instances with new launch template/AMI automatically.  
 -   Rolling Update:   Gradually replaces instances manually or via deployment tools.
