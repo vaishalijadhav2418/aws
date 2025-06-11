@@ -8,6 +8,7 @@ A port number is a 16-bit numeric value (0–65535) used to identify specific pr
 | 49152–65535 | Dynamic/private ports        |
 
 2. What are the 7 Layers of the OSI Model?
+   
 Answer:
 1. Physical – Transmits raw bits over the physical medium
 2. Data Link – Error detection and MAC addressing
@@ -17,6 +18,7 @@ Answer:
 6. Presentation – Data formatting and encryption
 7. Application – End-user interaction (HTTP, FTP)
 
+________________________________________________________________________
 3. What are the 4 Layers of the TCP/IP Model?
 Answer:
 1. Network Interface – Maps to OSI's Physical + Data Link
