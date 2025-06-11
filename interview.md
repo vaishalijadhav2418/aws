@@ -20,12 +20,14 @@ Answer:
 
 ________________________________________________________________________
 3. What are the 4 Layers of the TCP/IP Model?
+4. 
 Answer:
 1. Network Interface – Maps to OSI's Physical + Data Link
 2. Internet – Maps to OSI's Network layer (IP, ICMP)
 3. Transport – TCP/UDP (same as OSI Transport)
 4. Application – Combines OSI’s Session, Presentation, Application
 
+_____________________________________________________________
 4. What is SDLC?
 Answer:
 The Software Development Life Cycle (SDLC) is a structured approach to software development. It consists of phases like planning, analysis, design, implementation, testing, deployment, and maintenance.
